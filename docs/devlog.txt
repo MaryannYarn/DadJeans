@@ -60,3 +60,9 @@ Maryann Foley :: Brainstormed idea for dog park
 --------------------------------------------------------------
 Maryann Foley :: Wrote project proposal for dog park
 ==============================================================
+
+
+2018-05-28
+--------------------------------------------------------------
+Maryann Foley and Shruthi Venkata:: Discussed whether Dog should be a normal class, interface, or abstract.  Decided to use abstract because we want to have some predefined methods but others that differ. 
+==============================================================
