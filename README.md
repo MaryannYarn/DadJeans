@@ -7,5 +7,7 @@
 - Driver class methods
 - Dog breed classes to extend Dog abstact
 - Enemy class
+- Enemy type classes to extend abstact (ball [tutorial], bird, squirrel, cat, etc.)
 - Implement stack of enemies
 - Graphics
+- Narrative/story
