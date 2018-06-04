@@ -1,4 +1,4 @@
-public abstract class Dog {
+abstract class Dog {
 
 public static final MAXSCARED;
 
