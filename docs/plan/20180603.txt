@@ -1,0 +1,20 @@
+PLAN:
+Most->Least crucial
+Dog abstract class
+Enemy abstract class
+One dog class that extends the dog abstract
+One Enemy class that extends the enemy abstract
+A driver class with 4 heaps of dogs (cutest, most agile, most powerful, loudest) and stack of enemies
+A working battle function
+Ability to gain new dogs and select dogs at beginnings of battles
+Add more enemy and dog classes
+Graphics for battle
+Graphics for transitions and each enemy
+Story line at beginning and end
+
+Red: core 
+Black: Non-essential
+
+Timeline:
+Have working driver class with battle function by end of Tuesday
+Add graphics by Wednesday
