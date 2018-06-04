@@ -55,6 +55,11 @@ LESSONS LEARNED
 Maryann Foley :: Brainstormed idea for dog park
 ==============================================================
 
+2018-05-24
+--------------------------------------------------------------
+Shruthi Venkata: Created abstract classes for Dog and Enemy
+--------------------------------------------------------------
+
 
 2018-05-28
 --------------------------------------------------------------
@@ -66,3 +71,13 @@ Maryann Foley :: Wrote project proposal for dog park
 --------------------------------------------------------------
 Maryann Foley and Shruthi Venkata:: Discussed whether Dog should be a normal class, interface, or abstract.  Decided to use abstract because we want to have some predefined methods but others that differ. 
 ==============================================================
+
+2018-06-01
+--------------------------------------------------------------
+Shruthi Venkata and Maryann Foley: Created flowchart
+--------------------------------------------------------------
+
+2018-06-04
+--------------------------------------------------------------
+Shruthi Venkata: Created Processing files for Driver and converted ALHeap and Dog class to Processing format
+--------------------------------------------------------------
