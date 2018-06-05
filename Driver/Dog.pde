@@ -9,6 +9,15 @@ private int loud; //loudness
 private int power;
 public int scared;
 public boolean isDefeated;
+public String name;
+
+public Dog(int cute,int agile,int bork, int strong, String inName){
+  cuteness=cute;
+  agility=agile;
+  loud=bork;
+  power=strong;
+  name=inName;
+}
 
 //modifier methods
 public int getCuteness() {
@@ -29,6 +38,10 @@ public int getPwr() {
 
 public int getScared() {
 	return scared;
+}
+
+public String getNombre(){
+  return name;
 }
 
 //modifier methods
