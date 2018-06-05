@@ -74,10 +74,11 @@ Maryann Foley and Shruthi Venkata:: Discussed whether Dog should be a normal cla
 
 2018-06-01
 --------------------------------------------------------------
-Shruthi Venkata and Maryann Foley: Created flowchart
+Maryann Foley: Created flowchart
 --------------------------------------------------------------
 
 2018-06-04
 --------------------------------------------------------------
 Shruthi Venkata: Created Processing files for Driver and converted ALHeap and Dog class to Processing format
+Maryann Foley: Wrote ALHeap so that it uses Dogs and can compare dogs on different criteria, added dog methods
 --------------------------------------------------------------
