@@ -23,7 +23,7 @@ void setup() {
 void next() {
  Enemy en = ennemis.pop();
  println("Here are the stats of your next enemy!");
- println("Health: " + en.getHP);
- println("Maximum cuteness tolerated: " + en.getWithstoodCute);
+ println("Health: " + en.getHP());
+ println("Maximum cuteness tolerated: " + en.getWithstoodCute());
  println("Please pick which dog you would like: the most cute (0), agile (1), loud (2) or powerful (3)");
 }
