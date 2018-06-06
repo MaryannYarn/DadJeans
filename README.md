@@ -2,6 +2,7 @@
 ## Maryann Foley, Shruthi Venkata, Jessica Wu
 
 _**Game Description**_
+
 _**Instructions for Playing**_
 _**Instructions for Running**_
 (fill in later) 
