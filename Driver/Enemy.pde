@@ -15,14 +15,6 @@ public boolean isDefeated() {
 return false;
 }
 
-public void setHP(int x) {
-BASEHP = x;
-}
-
-public void setCute(int x) {
-BASECUTE = x;
-}
-
 public abstract modifyHP(int damage){
 HP -= damage; 
 }
