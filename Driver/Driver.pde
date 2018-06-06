@@ -22,7 +22,11 @@ void setup() {
   ennemis.add(new Ball());
   ennemis.add(new Ball());
   ennemis.add(new Ball());
-  chub = new Dog()
+  Dog chub = new Dog("chub");
+  Dog chou = new Dog("chou");
+  Dog fleur = new Dog("fleur");
+  Dog bub = new Dog("bub");
+  Dog chien = new Dog("chien");
 }
 
 void next() {
