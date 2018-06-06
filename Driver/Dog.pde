@@ -11,7 +11,8 @@ public int scared;
 public boolean isDefeated;
 public String name;
 
-public Dog(int cute,int agile,int bork, int strong, String inName){
+public Dog(String inName){
+  int cute,int agile,int bork, int strong
   cuteness=cute;
   agility=agile;
   loud=bork;
@@ -64,7 +65,7 @@ public void setPwr(int x) {
 }
 */
 public void setScared(int x) {
-	scared = x;
+	scared -= x;
 }
 
 

@@ -16,8 +16,8 @@ public void modifyHP(int damage){
 HP -= damage; 
 }
 
-public void modifyCute(int charmed){
-withstoodCuteness -= charmed; //?? is this how it works 
+public void modifyCute(int cuteness){ //as in cuteness of the dog
+withstoodCuteness -= cuteness; //?? is this how it works 
 }
 
 public void modifyScared(int fear){
@@ -43,5 +43,10 @@ public int attack(){
 
 public String winMessage();
 
+<<<<<<< HEAD
+public abstract String loseMessage();
+}
+=======
 public String loseMessage();
 }
+>>>>>>> d6165adbe6c38795e0b2df540f0619d18078c4f7
