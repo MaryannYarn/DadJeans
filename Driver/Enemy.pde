@@ -7,6 +7,7 @@ private int HP;
 private int withstoodCuteness;
 public int scared;
 public String name;
+public int attackStrength;
 
 
 //methods
@@ -36,7 +37,9 @@ public int getScared(){
 return scared;
 }
 
-public abstract int attack();
+public int attack(){
+  return attackStrength;
+}
 
 public abstract String winMessage();
 
