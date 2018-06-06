@@ -65,4 +65,10 @@ public void setScared(int x) {
 	scared = x;
 }
 
+public abstract winMessage(){
+}
+
+public abstract loseMessage(){
+}
+
 }
