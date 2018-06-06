@@ -82,3 +82,8 @@ Maryann Foley: Created flowchart
 Shruthi Venkata: Created Processing files for Driver and converted ALHeap and Dog class to Processing format
 Maryann Foley: Wrote ALHeap so that it uses Dogs and can compare dogs on different criteria, added dog methods
 --------------------------------------------------------------
+
+2018-06-05
+--------------------------------------------------------------
+Shruthi Venkata: Updated Driver class, made modifications to Dog class, converted Enemy class to Processing file
+--------------------------------------------------------------
