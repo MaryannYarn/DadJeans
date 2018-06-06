@@ -1,6 +1,6 @@
 abstract class Dog {
 
-public static final int MAXSCARED;
+public final int MAXSCARED;
 
 //instance vars
 private int cuteness;
@@ -17,6 +17,7 @@ public Dog(int cute,int agile,int bork, int strong, String inName){
   loud=bork;
   power=strong;
   name=inName;
+  MAXSCARED = 50;
 }
 
 //modifier methods
@@ -65,10 +66,10 @@ public void setScared(int x) {
 	scared = x;
 }
 
-public abstract winMessage(){
-}
+public abstract String winMessage();
 
-public abstract loseMessage(){
-}
+public abstract String loseMessage();
+
+public abstract String dogImage();
 
 }
