@@ -62,11 +62,11 @@ public void setLoud(int x) {
 public void setPwr(int x) {
 	power = x;
 }
-
+*/
 public void setScared(int x) {
 	scared = x;
 }
-*/
+
 
 public String winMessage(){
  return "Your good boy defeated the enemy! Give them some treats tonight";

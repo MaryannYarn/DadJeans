@@ -1,0 +1,14 @@
+public Ball extends Enemy {
+
+public Ball(){
+
+}
+
+BASEHP = random();
+BASECUTE = ;
+
+//methods 
+
+
+
+} // end class Ball 
