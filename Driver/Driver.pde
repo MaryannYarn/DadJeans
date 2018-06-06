@@ -18,6 +18,11 @@ void setup() {
   agileH = new ALHeap(1);
   loudH =  new ALHeap(2);
   powerH = new ALHeap(3);
+  ennemis.add(new Ball());
+  ennemis.add(new Ball());
+  ennemis.add(new Ball());
+  ennemis.add(new Ball());
+  chub = new Dog()
 }
 
 void next() {

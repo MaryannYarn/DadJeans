@@ -1,4 +1,4 @@
-abstract class Dog {
+public class Dog {
 
 public final int MAXSCARED;
 
@@ -46,6 +46,7 @@ public String getNombre(){
 }
 
 //modifier methods
+/*
 public void setCuteness(int x) {
 	cuteness = x;
 }
@@ -65,11 +66,16 @@ public void setPwr(int x) {
 public void setScared(int x) {
 	scared = x;
 }
+*/
 
-public abstract String winMessage();
+public String winMessage(){
+ return "Your good boy defeated the enemy! Give them some treats tonight";
+}
 
-public abstract String loseMessage();
+public String loseMessage() {
+  return "Nooo! Your dog was so scared they ran away... good luck finding them ;)";
+}
 
-public abstract String dogImage();
+//public String dogImage();
 
 }
