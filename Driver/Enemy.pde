@@ -41,7 +41,7 @@ public int attack(){
   return attackStrength;
 }
 
-public abstract String winMessage();
+public String winMessage();
 
-public abstract String loseMessage();
+public String loseMessage();
 }
