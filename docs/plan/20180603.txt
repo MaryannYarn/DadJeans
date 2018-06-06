@@ -1,6 +1,8 @@
 PLAN:
 Most->Least crucial
 CORE
+Dog abstract class
+Enemy abstract class
 One dog class that extends the dog abstract
 One Enemy class that extends the enemy abstract
 A driver class with 4 heaps of dogs (cutest, most agile, most powerful, loudest) and stack of enemies
