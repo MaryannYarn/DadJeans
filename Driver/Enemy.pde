@@ -5,25 +5,56 @@ private static final int BASEHP;
 private static final int BASECUTE;
 private int HP;
 private int withstoodCuteness;
+public int scared;
+public String name;
+
 
 //methods
 //i don't think we should have isDefeated--in that case can we just remove it from the stack?
 public boolean isDefeated() {
-  return false;
+return false;
 }
 
 public void setHP(int x) {
-  HP = x;
+BASEHP = x;
 }
+
+public void setCute(int x) {
+BASECUTE = x;
+}
+
+public abstract modifyHP(int damage){
+HP -= damage; 
+}
+
+public abstract modifyCute(int charmed){
+withstoodCuteness -= charmed; //?? is this how it works 
+}
+
+public abstract modifyScared(int fear){
+scared -= fear; 
+}
+
 
 public void getHP() {
-  return HP;
+return HP;
 }
 
-//I think there's also supposed to be a setCute method but i don't get what it's supposed to do so leaving it out rn
-
 public void getWithstoodCute() {
-  return withstoodCuteness;
+return withstoodCuteness;
+}
+
+public void getScared(){
+return scared;
+}
+
+public abstract attack(){
+}
+
+public abstract winMessage(){
+}
+
+public abstract loseMessage(){
 }
 
 }
