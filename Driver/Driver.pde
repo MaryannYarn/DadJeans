@@ -26,7 +26,7 @@ void setup() {
   ennemis.add(new Ball());
   ennemis.add(new Ball());
   ennemis.add(new Ball());
-  Dog chub = new Dog(10, 10, 10, 10, "Charlie");
+  Dog chub = new Dog("Charlie");
   cuteH.add(chub);
   agileH.add(chub);
   loudH.add(chub);

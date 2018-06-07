@@ -1,6 +1,6 @@
-public class Dog {
+class Dog {
 
-public final int MAXSCARED;
+public static final int MAXSCARED;
 
 //instance vars
 private int cuteness;
@@ -12,7 +12,10 @@ public boolean isDefeated;
 public String name;
 
 public Dog(String inName){
-  int cute,int agile,int bork, int strong
+  int cute = 0;
+  int agile = 0;
+  int bork = 0;
+  int strong = 0;
   cuteness=cute;
   agility=agile;
   loud=bork;

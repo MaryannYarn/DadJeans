@@ -1,4 +1,4 @@
-public abstract class Enemy {
+abstract class Enemy {
 
 //instance vars
 private final int BASEHP;
@@ -41,12 +41,9 @@ public int attack(){
   return attackStrength;
 }
 
-public String winMessage();
+public abstract String winMessage() {
+}
 
-<<<<<<< HEAD
-public abstract String loseMessage();
+public abstract String loseMessage(){
 }
-=======
-public String loseMessage();
 }
->>>>>>> d6165adbe6c38795e0b2df540f0619d18078c4f7
