@@ -177,7 +177,7 @@ class ALHeap
    * Removes and returns least element in heap.
    * Postcondition: Tree maintains heap property.
    *****************************************************/
-  public Integer removeMin()
+  public Dog removeMin()
   { 
     if ( _heap.size() == 0 ) 
       return null;

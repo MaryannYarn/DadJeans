@@ -12,37 +12,33 @@ public boolean isDefeated;
 public String name;
 
 public Dog(String inName){
-  int cute = 0;
-  int agile = 0;
-  int bork = 0;
-  int strong = 0;
-  cuteness=cute;
-  agility=agile;
-  loud=bork;
-  power=strong;
+  cuteness = random(10,100);
+  agility = random(10,100);
+  loud = random(10,100);
+  power = random(10,100);
   name=inName;
   MAXSCARED = 50;
 }
 
 //modifier methods
-public int getCuteness() {
-	return cuteness;
+public Integer getCuteness() {
+	return new Integer(cuteness);
 }
 
-public int getAgility() {
-	return agility;
+public Integer getAgility() {
+	return new Integer(agility);
 }
 
-public int getLoud() {
-	return loud;
+public Integer getLoud() {
+	return new Integer(loud);
 }
 
-public int getPwr() {
-	return power;
+public Integer getPwr() {
+	return new Integer(power);
 }
 
-public int getScared() {
-	return scared;
+public Integer getScared() {
+	return new Integer(scared);
 }
 
 public String getNombre(){
