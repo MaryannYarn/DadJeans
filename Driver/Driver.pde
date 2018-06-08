@@ -187,11 +187,6 @@ void mouseClicked() {
   }
 }
 
-public void displayEnemy(){
-  fill(color(255,0,0));
-  ellipse(750,350,100,100);
-}
-
 
 public boolean isEnDefeated(){
   return (current.getHP()<=0 ||current.getWithstoodCute()<=0||current.getScared()<=0); //boolean wether the enemy has or has not died

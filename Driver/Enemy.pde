@@ -54,11 +54,6 @@ public abstract String winMessage();
 
 public abstract String loseMessage();
 
-public void displayEnemy(){
-  fill(color(255,0,0));
-  ellipse(750,350,100,100);
-
-}
 
 public String stats(){
   return ("name: "+name+"   withstood Cuteness: "+withstoodCuteness+"  HP: "+HP+"  scaredness: "+scared+"  attack Strength: "+attackStrength);
