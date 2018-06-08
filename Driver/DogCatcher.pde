@@ -4,6 +4,7 @@ public DogCatcher(){
 HP = (int)random(300,500);
 withstoodCuteness = (int)random(300,500);
 name = "Dog catcher";
+scared = (int)random(400,700);
 }
 
 //methods

@@ -53,6 +53,7 @@ void next() {
     delay(600);
     whoseMove=3;
   }
+  println(currDog.winMessage(current.getName()));
   Enemy current= ennemis.pop();
   println("Here are the stats of your next enemy!");
   println("Health: " + current.getHP());
@@ -211,18 +212,30 @@ void draw() {
     exit();
   }
   if (whoseMove==1) {
+    if (currDog.isDefeated()){
+      println(currDog.loseMessage());
+      delay(500);
+      whoseMove=3;
+    }
+    if (isEnDefeated()){
+      whoseMove=2;
+    }
+    println("PRE ENEMY ATTAACC");
+    println(current.stats());
+    println(currDog.stats());
     currDog.setScared(current.attack());
     whoseMove=0;
+    println("POST ENEMY ATTACK");
     println(current.stats());
     println(currDog.stats());
   }
   if (whoseMove ==2) {
     println("You defeated an enemy!");
     next();
-    delay(1000);
+    //delay(1000);
     //area for user input
   }
-  if (whoseMove==0){ // b u t t o n s
+  /*if (whoseMove==0){ // b u t t o n s
     fill(color1);
     rect(0,0,500,350,10);
   //  rect(250,175,250,175,10);
@@ -233,7 +246,7 @@ void draw() {
     rect(500,0,500,350,10);
     fill(color4);
     rect(500,350,500,350,10);
-  }
+  }*/
 }
 
 void mouseClicked() {
@@ -254,10 +267,17 @@ void mouseClicked() {
   }
 
   if (whoseMove == 0) { //TOP LEFT: BITE, TOP RIGHT:Bark, BOTTOM LEFT: POUNCE, BOTTOM RIGHT: CHARM
+    println("PRE DOG ATTAACC");
+    println(current.stats());
+    println(currDog.stats());
     if (currDog.isDefeated()){
-      println("Your dog has been defeated! Try again!");
+      println(currDog.loseMessage());
       delay(500);
       whoseMove=3;
+    }
+    if (isEnDefeated()){
+    //  next();
+    whoseMove=2;
     }
      if(mouseX < 500 && mouseY < 350){
        current.modifyHP(currDog.getPwr());
@@ -276,7 +296,9 @@ void mouseClicked() {
        current.modifyCute(currDog.getCuteness());
        current.modifyScared(-1*currDog.getCuteness());
      }
-
+     println("POST DOG ATTAACC");
+     println(current.stats());
+     println(currDog.stats());
      whoseMove=1;
   }
 }
@@ -284,5 +306,9 @@ void mouseClicked() {
 public void displayEnemy(){
   fill(color(255,0,0));
   ellipse(750,350,100,100);
+}
 
+
+public boolean isEnDefeated(){
+  return (current.getHP()<0 ||current.getWithstoodCute()<0||current.getScared()<0);
 }

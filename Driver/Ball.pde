@@ -4,6 +4,7 @@ public Ball(){
 HP = (int)random(50,100);
 withstoodCuteness = (int)random(50,100);
 attackStrength= (int)random(1,5);
+scared = (int)random(50,100);
 name = "ball";
 }
 
@@ -15,7 +16,7 @@ return msg;
 }
 
 public String loseMessage(){
-String msg = "The dog defeated the ball!";
+String msg = "The deflated ball rolled away!";
 return msg;
 }
 

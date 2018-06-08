@@ -36,6 +36,10 @@ public int getScared(){
 return scared;
 }
 
+public String getName(){
+  return name;
+}
+
 public int attack(){
   return attackStrength;
 }
@@ -51,7 +55,7 @@ public void displayEnemy(){
 }
 
 public String stats(){
-  return ("name: "+name+"  HP: "+withstoodCuteness+"  HP: "+HP+"  scared: "+scared+"  attackStrength: "+attackStrength);
+  return ("name: "+name+"  withstoodCuteness: "+withstoodCuteness+"  HP: "+HP+"  scared: "+scared+"  attackStrength: "+attackStrength);
 }
 
 }
