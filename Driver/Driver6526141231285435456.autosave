@@ -61,145 +61,68 @@ void next() {
   int randName = (int)random(0,20);
   if (randName==0){
     Dog temp = new Dog("Buddie");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==1){
     Dog temp = new Dog("Groth");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==2){
     Dog temp = new Dog("Sammie");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==3){
     Dog temp = new Dog("Chester");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==4){
     Dog temp = new Dog("Bailey");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==5){
     Dog temp = new Dog("Luna");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==6){
     Dog temp = new Dog("Apollo");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==7){
     Dog temp = new Dog("Clifford");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==8){
     Dog temp = new Dog("Ernie");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==9){
     Dog temp = new Dog("Griffin");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==10){
     Dog temp = new Dog("Haring");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==11){
     Dog temp = new Dog("Grant");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==12){
     Dog temp = new Dog("Dali");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==13){
     Dog temp = new Dog("Valazquez");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==14){
     Dog temp = new Dog("Pawcaso");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==15){
     Dog temp = new Dog("JK Growling");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==16){
     Dog temp = new Dog("Billie Howliday");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==17){
     Dog temp = new Dog("Snoop Dog");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   if (randName==18){
     Dog temp = new Dog("bork master 9000");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
   else{
     Dog temp = new Dog("Bert");
-    cuteH.add(temp);
-    agileH.add(temp);
-    loudH.add(temp);
-    powerH.add(temp);
   }
-
+  cuteH.add(temp);
+  agileH.add(temp);
+  loudH.add(temp);
+  powerH.add(temp);
 }
 
 void draw() {
@@ -221,15 +144,13 @@ void draw() {
   }
   if (whoseMove==0){ // b u t t o n s
     fill(color1);
-    rect(0,0,500,350,10);
-  //  rect(250,175,250,175,10);
+    rect(250,175,250,175,10);
     fill(color2);
-    //rect(250,525,250,175,10);
-    rect(0,350,500,350,10);
+    rect(250,525,250,175,10);
     fill(color3);
-    rect(500,0,500,350,10);
+    rect(750,175,250,175,10);
     fill(color4);
-    rect(500,350,500,350,10);
+    rect(750,525,250,175,10);
   }
 }
 
