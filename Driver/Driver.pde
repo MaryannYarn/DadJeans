@@ -50,8 +50,6 @@ void setup() {
 }
 
 void draw() {
-       //delay(6000);
-
   clear();
   background(color(0,255,0));
   currDog.displayDog();
@@ -85,7 +83,6 @@ void draw() {
   }
   if (whoseMove==0){ // b u t t o n s
     fill(color1);
-<<<<<<< HEAD
     rect(0,0,200,200,10);
     fill(color2);
     rect(0,500,200,200,10);
@@ -93,17 +90,6 @@ void draw() {
     rect(800,0,200,200,10);
     fill(color4);
     rect(800,500,200,200,10);
-=======
-    rect(0,0,100,100,10);
-  //  rect(250,175,250,175,10);
-    fill(color2);
-    //rect(250,525,100,100,10);
-    rect(0,350,100,100,10);
-    fill(color3);
-    rect(500,0,100,100,10);
-    fill(color4);
-    rect(500,350,100,100,10);
->>>>>>> db9619185631f53a08f217ebe7d61a66a5bc3919
   }
 }
 
