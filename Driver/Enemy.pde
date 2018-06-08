@@ -12,6 +12,12 @@ public int attackStrength;
 
 //methods
 
+public boolean isDefeated(){
+  if (HP <= 0) {
+    return true;
+  }
+  return false;
+}
 public void modifyHP(int damage){
 HP -= damage; 
 }
