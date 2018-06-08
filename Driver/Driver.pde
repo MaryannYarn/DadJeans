@@ -30,8 +30,7 @@ void setup() {
   powerH = new ALHeap(3);
   Enemy temp = new Ball();
   ennemis.push(temp);
-
-  ennemis.push(new Ball());
+  ennemis.push(new Bird());
   ennemis.push(new Ball());
   ennemis.push(new Ball());
   Dog chub = new Dog("Charlie");
@@ -80,7 +79,7 @@ void draw() {
     //delay(1000);
     //area for user input
   }
-  /*if (whoseMove==0){ // b u t t o n s
+  if (whoseMove==0){ // b u t t o n s
     fill(color1);
     rect(0,0,500,350,10);
   //  rect(250,175,250,175,10);
@@ -91,7 +90,7 @@ void draw() {
     rect(500,0,500,350,10);
     fill(color4);
     rect(500,350,500,350,10);
-  }*/
+  }
 }
 
 void mouseClicked() {
@@ -155,7 +154,7 @@ public void displayEnemy(){
 
 
 public boolean isEnDefeated(){
-  return (current.getHP()<0 ||current.getWithstoodCute()<0||current.getScared()<0);
+  return (current.getHP()<=0 ||current.getWithstoodCute()<=0||current.getScared()<=0);
 }
 
 void next() {
@@ -163,10 +162,12 @@ void next() {
   if (ennemis.isEmpty()){
     println("You won!");
   //  delay(600);
-    whoseMove=3;
+    exit();
   }
+  else{
+  current= ennemis.pop();
+
   println(currDog.winMessage(current.getName()));
-  Enemy current= ennemis.pop();
   println("Here are the stats of your next enemy!");
   println("Health: " + current.getHP());
   println("Maximum cuteness tolerated: " + current.getWithstoodCute());
@@ -187,7 +188,7 @@ void next() {
     powerH.add(temp);
   }
   if (randName==2){
-    Dog temp = new Dog("Sammie");
+    Dog temp = new Dog("Bort Sampson");
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
@@ -312,5 +313,5 @@ void next() {
     loudH.add(temp);
     powerH.add(temp);
   }
-  whoseMove=0;
+  whoseMove=0;}
 }
