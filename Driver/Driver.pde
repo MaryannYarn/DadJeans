@@ -199,7 +199,7 @@ void next() {
     loudH.add(temp);
     powerH.add(temp);
   }
-
+  whoseMove=0;
 }
 
 void draw() {
@@ -273,6 +273,7 @@ void mouseClicked() {
        current.modifyCute(currDog.getCuteness());
        current.modifyScared(-1*currDog.getCuteness());
      }
+     whoseMove=1;
   }
 }
 
