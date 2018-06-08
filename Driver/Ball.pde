@@ -4,6 +4,7 @@ public Ball(){
 HP = (int)random(50,100);
 withstoodCuteness = (int)random(50,100);
 attackStrength= (int)random(1,5);
+name = "ball";
 }
 
 //methods

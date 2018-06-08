@@ -213,10 +213,13 @@ void draw() {
   if (whoseMove==1) {
     currDog.setScared(current.attack());
     whoseMove=0;
+    println(current.stats());
+    println(currDog.stats());
   }
   if (whoseMove ==2) {
     println("You defeated an enemy!");
     next();
+    delay(1000);
     //area for user input
   }
   if (whoseMove==0){ // b u t t o n s
@@ -273,6 +276,7 @@ void mouseClicked() {
        current.modifyCute(currDog.getCuteness());
        current.modifyScared(-1*currDog.getCuteness());
      }
+
      whoseMove=1;
   }
 }

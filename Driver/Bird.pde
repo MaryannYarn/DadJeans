@@ -3,7 +3,7 @@ class Bird extends Enemy {
 public Bird(){
 HP = (int)random(250,300);
 withstoodCuteness = (int)random(250,300);
-
+name = "bird";
 }
 
 //methods
