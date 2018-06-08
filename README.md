@@ -15,5 +15,12 @@ Some of the enemies that will be faced are:
 
 _**Instructions for Playing**_
 
-_**Instructions for Running**_
-(fill in later) 
+_**Launch Instructions**_
+1. CLONE OUR REPO
+~~~~
+$ git clone git@github.com:https://github.com/MaryannYarn/DadJeans.git 
+~~~~
+2. RUN Driver.pde FROM DadJeans/Driver DIRECTORY IN PROCESSING 
+3. BEGIN GAME BY FOLLOWING INSTRUCTIONS ON CONSOLE 
+
+ 
