@@ -3,9 +3,10 @@ class Cat extends Enemy {
 public Cat(){
 HP = (int)random(250,300);
 withstoodCuteness = (int)random(250,300);
+name = "cat";
 }
 
-//methods 
+//methods
 
 public String winMessage(){
 String msg = "The cat defeated the dog!";
@@ -17,4 +18,4 @@ String msg = "The dog defeated the cat!";
 return msg;
 }
 
-} // end class Cat 
+} // end class Cat

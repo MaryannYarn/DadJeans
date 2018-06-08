@@ -78,7 +78,7 @@ public void resetScared() {
 
 
 public String winMessage(){
- return "Your good boy defeated the enemy! Give them some treats tonight";
+ return "Your good boy, "+name+" defeated the enemy! Give them some treats tonight";
 }
 
 public String loseMessage() {
