@@ -1,8 +1,8 @@
 class Ball extends Enemy {
 
 public Ball(){
-HP = (int)random(50,100);
-withstoodCuteness = (int)random(50,100);
+HP = (int)random(100,200);
+withstoodCuteness = (int)random(100,200);
 attackStrength= (int)random(1,3);
 scared = (int)random(50,100);
 name = "ball";

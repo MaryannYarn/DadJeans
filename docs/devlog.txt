@@ -12,40 +12,44 @@ Final project
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Wow, we so BOSS bc...>
+We were confused about why every dog that came out had the same stats, but it turns out it was because we were using the same instance of the dog.
+
+It was tedious to position and resize every image we imported so that it would be displayed nicely.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
->
+We noticed, after implementing a heap with Dogs, that it seemed that the second instance in the heap would appear to be the one on top.
+After much tedious work trying to fix it, we decided to focus our time elsewhere.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
+We learned how to import images on Processing and display them after particular circumstances are met.
+We also learned how to create buttons that would allow for user-interaction.
+If we were to import fonts to use to display text, it would've taken too long to load (especially if we were to also use images)
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We changed ___ to ___ bc...
-<etc>
-<etc>
+We changed Dog to non-abstract bc...
+  -we decided that the methods that dogs had would not differ because of the type of dog and we wanted more randomness in types of dogs
+  than we could have written ourselves
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<tales of wisdom gained...>
+Be willing to explore something new with good resources such as the processing reference.
+
+Test a lot to avoid more debugging later! Things you may think are innocuous may come back and haunt you later
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
- ______   ______   __   __   __       ______   _______     
-/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
-\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
- \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
-  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
-   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
-    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
@@ -69,21 +73,40 @@ Maryann Foley :: Wrote project proposal for dog park
 
 2018-05-28
 --------------------------------------------------------------
-Maryann Foley and Shruthi Venkata:: Discussed whether Dog should be a normal class, interface, or abstract.  Decided to use abstract because we want to have some predefined methods but others that differ. 
+Maryann Foley and Shruthi Venkata:: Discussed whether Dog should be a normal class, interface, or abstract.  Decided to use abstract because we want to have some predefined methods but others that differ.
 ==============================================================
 
 2018-06-01
 --------------------------------------------------------------
 Maryann Foley: Created flowchart
+Jessica Wu: Edited and updated project proposal
 --------------------------------------------------------------
 
 2018-06-04
 --------------------------------------------------------------
 Shruthi Venkata: Created Processing files for Driver and converted ALHeap and Dog class to Processing format
-Maryann Foley: Wrote ALHeap so that it uses Dogs and can compare dogs on different criteria, added dog methods
+Maryann Foley: Wrote ALHeap so that it uses Dogs and can compare dogs on different criteria, added dog methods, wrote plan
 --------------------------------------------------------------
 
 2018-06-05
 --------------------------------------------------------------
 Shruthi Venkata: Updated Driver class, made modifications to Dog class, converted Enemy class to Processing file
+Jessica Wu: Edited plan. Wrote instance vars and methods for Enemy class
+--------------------------------------------------------------
+
+2018-06-06
+--------------------------------------------------------------
+Maryann Foley: Updated Driver class, updated Dog class, corrected syntax for abstract classes, worked on driver methods
+Jessica Wu: Created classes and set variables and created methods for all enemy classes, wrote plan
+--------------------------------------------------------------
+
+2018-06-07
+--------------------------------------------------------------
+Maryann Foley: Updated Driver class, updates for functionality of AL Heap, added methods to Enemy and Dog classes
+--------------------------------------------------------------
+
+2018-06-08
+--------------------------------------------------------------
+Maryann Foley and Jessica Wu: Created attack methods and debugged all classes
+Jessica Wu: Imported and uploaded images to be incorporated into game
 --------------------------------------------------------------

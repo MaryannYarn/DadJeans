@@ -3,7 +3,7 @@ class DogCatcher extends Enemy {
 public DogCatcher(){
 HP = (int)random(300,500);
 withstoodCuteness = (int)random(300,500);
-name = "Dog catcher";
+name = "DogCatcher";
 scared = (int)random(400,700);
 attackStrength= (int)random(12,15);
 }

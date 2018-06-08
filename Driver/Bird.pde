@@ -1,8 +1,8 @@
 class Bird extends Enemy {
 
 public Bird(){
-HP = (int)random(250,300);
-withstoodCuteness = (int)random(250,300);
+HP = (int)random(400,450);
+withstoodCuteness = (int)random(350,400);
 name = "bird";
 scared = (int)random(100,150);
 attackStrength= (int)random(6,9);

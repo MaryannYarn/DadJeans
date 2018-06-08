@@ -1,10 +1,10 @@
 class Squirrel extends Enemy {
 
 public Squirrel(){
-HP = (int)random(150,200);
-withstoodCuteness = (int)random(150,200);
+HP = (int)random(300,400);
+withstoodCuteness = (int)random(300,400);
 name = "squirrel";
-attackStrength= (int)random(3,6);
+attackStrength= (int)random(3,10);
 }
 
 //methods

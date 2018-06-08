@@ -16,9 +16,9 @@ class ALHeap
   /*****************************************************
    * default constructor  ---  inits empty heap
    *****************************************************/
-  public ALHeap(int input) 
+  public ALHeap(int input)
   {
-    _heap = new ArrayList<Dog>();     
+    _heap = new ArrayList<Dog>();
     sortingMethod = input;
   }
 
@@ -26,14 +26,14 @@ class ALHeap
 
   /*****************************************************
    * toString()  ---  overrides inherited method
-   * Returns either 
+   * Returns either
    * a) a level-order traversal of the tree (simple version)
    * b) ASCII representation of the tree (more complicated, more fun)
    *****************************************************/
-  public String toString() 
+  public String toString()
   {
     //simple version:
-    //return _heap.toString(); 
+    //return _heap.toString();
 
     //prettier version:
     String lvlOrdTrav = "heap size " + _heap.size() + "\n";
@@ -85,18 +85,18 @@ class ALHeap
    * boolean isEmpty()
    * Returns true if no meaningful elements in heap, false otherwise
    *****************************************************/
-  public boolean isEmpty() { 
+  public boolean isEmpty() {
     return _heap.isEmpty();
   } //O(1)
 
 
   /*****************************************************
-   * Integer peekMin()
+   * float peekMin()
    * Returns min value in heap
    * Postcondition: Heap remains unchanged.
    *****************************************************/
   public Dog peekMin()
-  { 
+  {
     if ( _heap.size() < 1 )
       return null;
     else
@@ -105,70 +105,32 @@ class ALHeap
 
 
   /*****************************************************
-   * add(Integer) 
+   * add(Integer)
    * Inserts an element in the heap
    * Postcondition: Tree exhibits heap property.
    *****************************************************/
   public void add( Dog addVal )
-  { 
+  {
 
     //Add value as last node, to maintain balance, completeness of tree
     _heap.add( addVal );
 
     int addValPos = _heap.size() - 1;
     int parentPos;
-    if (sortingMethod==0) {
+
       while ( addValPos > 0 ) { //potentially swap until reach root
 
         //pinpoint parent
         parentPos = (addValPos-1) / 2;
 
-        if ( addVal.getCuteness().compareTo(_heap.get(parentPos).getCuteness()) < 0 ) {//addVal < parent
+        if (getRightVal(addVal)<getRightVal(_heap.get(parentPos)) ) {//addVal < parent
           swap( addValPos, parentPos );
           addValPos = parentPos;
-        } else 
+        } else
         break;
       }
-    }
-    if (sortingMethod==1) {
-      while ( addValPos > 0 ) { //potentially swap until reach root
 
-        //pinpoint parent
-        parentPos = (addValPos-1) / 2;
 
-        if ( addVal.getAgility().compareTo(_heap.get(parentPos).getAgility()) < 0 ) {//addVal < parent
-          swap( addValPos, parentPos );
-          addValPos = parentPos;
-        } else 
-        break;
-      }
-    }
-    if (sortingMethod==2) {
-      while ( addValPos > 0 ) { //potentially swap until reach root
-
-        //pinpoint parent
-        parentPos = (addValPos-1) / 2;
-
-        if ( addVal.getLoud().compareTo(_heap.get(parentPos).getLoud()) < 0 ) {//addVal < parent
-          swap( addValPos, parentPos );
-          addValPos = parentPos;
-        } else 
-        break;
-      }
-    }
-    if (sortingMethod==3) {
-      while ( addValPos > 0 ) { //potentially swap until reach root
-
-        //pinpoint parent
-        parentPos = (addValPos-1) / 2;
-
-        if ( addVal.getPwr().compareTo(_heap.get(parentPos).getPwr()) < 0 ) {//addVal < parent
-          swap( addValPos, parentPos );
-          addValPos = parentPos;
-        } else 
-        break;
-      }
-    }
   } //O(logn)
 
 
@@ -178,8 +140,8 @@ class ALHeap
    * Postcondition: Tree maintains heap property.
    *****************************************************/
   public Dog removeMin()
-  { 
-    if ( _heap.size() == 0 ) 
+  {
+    if ( _heap.size() == 0 )
       return null;
 
     //store root value for return at end of fxn
@@ -204,10 +166,10 @@ class ALHeap
         minChildPos = minChildPos(pos);
 
         //if no children, then i've walked far enough
-        if ( minChildPos == -1 ) 
+        if ( minChildPos == -1 )
           break;
         //if i am less than my least child, then i've walked far enough
-        else if ( foo.getCuteness().compareTo( _heap.get(minChildPos).getCuteness() ) <= 0 ) 
+        else if ( foo.getCuteness().compareTo( _heap.get(minChildPos).getCuteness() ) <= 0 )
           break;
         //if i am > least child, swap with that child
         else {
@@ -223,10 +185,10 @@ class ALHeap
         minChildPos = minChildPos(pos);
 
         //if no children, then i've walked far enough
-        if ( minChildPos == -1 ) 
+        if ( minChildPos == -1 )
           break;
         //if i am less than my least child, then i've walked far enough
-        else if ( foo.getAgility().compareTo( _heap.get(minChildPos).getAgility() ) <= 0 ) 
+        else if ( foo.getAgility().compareTo( _heap.get(minChildPos).getAgility() ) <= 0 )
           break;
         //if i am > least child, swap with that child
         else {
@@ -242,10 +204,10 @@ class ALHeap
         minChildPos = minChildPos(pos);
 
         //if no children, then i've walked far enough
-        if ( minChildPos == -1 ) 
+        if ( minChildPos == -1 )
           break;
         //if i am less than my least child, then i've walked far enough
-        else if ( foo.getLoud().compareTo( _heap.get(minChildPos).getLoud() ) <= 0 ) 
+        else if ( foo.getLoud().compareTo( _heap.get(minChildPos).getLoud() ) <= 0 )
           break;
         //if i am > least child, swap with that child
         else {
@@ -261,10 +223,10 @@ class ALHeap
         minChildPos = minChildPos(pos);
 
         //if no children, then i've walked far enough
-        if ( minChildPos == -1 ) 
+        if ( minChildPos == -1 )
           break;
         //if i am less than my least child, then i've walked far enough
-        else if ( foo.getPwr().compareTo( _heap.get(minChildPos).getPwr() ) <= 0 ) 
+        else if ( foo.getPwr().compareTo( _heap.get(minChildPos).getPwr() ) <= 0 )
           break;
         //if i am > least child, swap with that child
         else {
@@ -280,12 +242,12 @@ class ALHeap
 
   /*****************************************************
    * minChildPos(int)  ---  helper fxn for removeMin()
-   * Returns index of least child, or 
+   * Returns index of least child, or
    * -1 if no children, or if input pos is not in ArrayList
    * Postcondition: Tree unchanged
    *****************************************************/
   private int minChildPos( int pos )
-  { 
+  {
     int retVal;
     int lc = 2*pos + 1; //index of left child
     int rc = 2*pos + 2; //index of right child
@@ -296,56 +258,38 @@ class ALHeap
     //if no right child, then left child is only option for min
     else if ( rc >= _heap.size() )
       retVal = lc;
-    //have 2 children, so compare to find least 
-    else if ( getRightVal(_heap.get(lc)).compareTo(getRightVal(_heap.get(rc))) < 0 )
+    //have 2 children, so compare to find least
+    else if ( getRightVal(_heap.get(lc)) < (getRightVal(_heap.get(rc))) )
       retVal = lc;
     else
       retVal = rc;
     return retVal;
   }//O(1)
 
-  private Integer getRightVal(Dog input){
+  private float getRightVal(Dog input){
     if (sortingMethod==0){
-      return input.getCuteness();
+      return (1.0/input.getCuteness()).parseInt();
     }
     if (sortingMethod==1){
-      return input.getAgility();
+      return (1.0/(input.getAgility().parseInt());
     }
     if (sortingMethod==2){
-      return input.getLoud();
+      return (1.0/input.getLoud().parseInt());
     }
     else{
-      return input.getPwr();
+      return (1.0/input.getPwr().parseInt());
     }
   }
 
   //************ aux helper fxns ***************
   private Dog minOf( Dog a, Dog b )
   {
-    if (sortingMethod ==0) {
-      if ( a.getCuteness().compareTo(b.getCuteness()) < 0 )
-        return a;
-      else
-        return b;
-    }
-    else if (sortingMethod ==1) {
-      if ( a.getAgility().compareTo(b.getAgility()) < 0 )
-        return a;
-      else
-        return b;
-    }
-    else if (sortingMethod ==2) {
-      if ( a.getLoud().compareTo(b.getLoud()) < 0 )
-        return a;
-      else
-        return b;
-    }
-    else {
-      if ( a.getPwr().compareTo(b.getPwr()) < 0 )
-        return a;
-      else
-        return b;
-    }
+
+    if (getRightVal(a)<getRightVal(b))
+      return a;
+    else
+      return b;
+
   }
 
   //swap for an ArrayList

@@ -1,8 +1,8 @@
 class Cat extends Enemy {
 
 public Cat(){
-HP = (int)random(250,300);
-withstoodCuteness = (int)random(250,300);
+HP = (int)random(300,400);
+withstoodCuteness = (int)random(400,500);
 name = "cat";
 scared = (int)random(150,200);
 attackStrength= (int)random(9,12);

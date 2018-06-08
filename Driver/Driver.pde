@@ -14,27 +14,35 @@ Enemy current;
 int whoseMove; //0 is dogs move, 1 is enemy's move, 2 means enemy has just been defeated
 Dog currDog;
 
-color color1;
+color color1; // colors for buttons
 color color2;
 color color3;
 color color4;
 int levelCounter;
 
+  PImage img0; //will  be images
+  PImage img1;
+  PImage img2;
+  PImage img3;
+  PImage img4;
+  PImage img5;
+
 void setup() {
   size(1000, 700);
   background(color(0,255,0));
   ennemis=new Stack<Enemy>();
-  println("Welcome to the Dangerous Dog Park, where your dogs come for a thriller....<more intro + directions>");
+  println("You came to the Dog Park with your dog walker when suddenly you turn around and they are gone! You must go defeat those who stand in
+  the way of you and your dog walker.  Along the way, you will meet more dogs who will help you on your quest. Good luck!");
   cuteH = new ALHeap(0);
   agileH = new ALHeap(1);
   loudH =  new ALHeap(2);
   powerH = new ALHeap(3);
-  Enemy temp = new Ball();
-  ennemis.push(temp);
+  ennemis.push(new DogCatcher());
+  ennemis.push(new Cat());
   ennemis.push(new Bird());
+  ennemis.push(new Squirrel());
   ennemis.push(new Ball());
-  ennemis.push(new Ball());
-  Dog chub = new Dog("Charlie",1);
+  Dog chub = new Dog("Charlie",1);// First dog is pre named
   levelCounter=1;
   cuteH.add(chub);
   agileH.add(chub);
@@ -47,13 +55,36 @@ void setup() {
   color2= color(107, 198, 198);
   color3= color(158, 193, 116);
   color4= color(255, 172, 48);
+  img0 = loadImage("http://www.stickpng.com/assets/images/580b585b2edbce24c47b2b90.png");
+  img1 = loadImage("http://www.stickpng.com/assets/images/580b57fbd9996e24bc43bcef.png");
+  img2 = loadImage("http://webiconspng.com/wp-content/uploads/2017/09/Birds-PNG-Image-62677.png");
+  img3 = loadImage("http://www.stickpng.com/assets/images/5a5a8bec14d8c4188e0b08ea.png");
+  img4 = loadImage("https://openclipart.org/image/2400px/svg_to_png/252173/Woman-Walking-Dog-Silhouette.png");
+  img5 = loadImage("https://data.whicdn.com/images/110263905/large.png");
 }
 
 void draw() {
   clear();
-  background(color(0,255,0));
+  background(color(65, 193, 149));
   currDog.displayDog();
-  displayEnemy();
+  //displayEnemy();
+  image(img5,104,200,img5.width/(1.5),img5.height/(1.5)); // images always there, only one enem at time
+  if (current.getName().equals("ball")){
+    image(img0,650,250,img0.width/10, img0.height/10);
+  }
+  else if (current.getName().equals("squirrel")){
+    image(img1,650,195,img1.width/4, img1.height/4);
+  }
+  else if (current.getName().equals("bird")){
+    image(img2,610,150,img2.width/7, img2.height/7);
+  }
+  else if (current.getName().equals("cat")){
+    image(img3,600,170,img3.width/4,img3.height/4);
+  }
+  else if (current.getName().equals("DogCatcher")){
+  image(img4,550,50,img4.width/5, img4.height/5);
+  }
+
   if (whoseMove==3){
     exit();
   }
@@ -64,24 +95,21 @@ void draw() {
       whoseMove=3;
     }
     if (isEnDefeated()){
+      next();
       whoseMove=2;
+      return;
     }
-    println("PRE ENEMY ATTAACC");
-    println(current.stats());
-    println(currDog.stats());
+  //  println("PRE ENEMY ATTAACC");
+//    println(current.stats());
+  //  println(currDog.stats());
     currDog.setScared(current.attack());
     whoseMove=0;
     println("POST ENEMY ATTACK");
     println(current.stats());
     println(currDog.stats());
   }
-  if (whoseMove ==2) {
-    println("You defeated an enemy!");
-    next();
-    //delay(1000);
-    //area for user input
-  }
-  if (whoseMove==0){ // b u t t o n s
+
+  if (whoseMove==0 || whoseMove ==2){ // b u t t o n s
     fill(color1);
     rect(0,0,200,200,10);
     fill(color2);
@@ -95,6 +123,7 @@ void draw() {
 
 void mouseClicked() {
   if (whoseMove == 2) { //TOP LEFT: CUTE, TOP RIGHT:LOUD, BOTTOM LEFT: AGILE, BOTTOM RIGHT: POWER
+    println("MOuSE CLICKED 2");
      if(mouseX < 200 && mouseY < 200){
        currDog=cuteH.peekMin();
      }
@@ -109,6 +138,7 @@ void mouseClicked() {
      }
      whoseMove=0;
   }
+
 
   if (whoseMove == 0) { //TOP LEFT: BITE, TOP RIGHT:Bark, BOTTOM LEFT: POUNCE, BOTTOM RIGHT: CHARM
     println("PRE DOG ATTAACC");
@@ -127,8 +157,9 @@ void mouseClicked() {
     if (isEnDefeated()){
     next();
     whoseMove=2;
+    return;
     }
-     if(mouseX < 500 && mouseY < 350){
+     if(mouseX < 500 && mouseY < 350){ //divides sections of screen
        current.modifyHP(currDog.getPwr());
        current.modifyCute(-1*currDog.getPwr());
        current.modifyScared(currDog.getPwr());
@@ -145,7 +176,7 @@ void mouseClicked() {
        current.modifyCute(currDog.getCuteness());
        current.modifyScared(-1*currDog.getCuteness());
      }
-     println("POST DOG ATTAACC");
+     println("STATS AFTER DOG ACTION:");
      println(current.stats());
      println(currDog.stats());
      whoseMove=1;
@@ -159,11 +190,12 @@ public void displayEnemy(){
 
 
 public boolean isEnDefeated(){
-  return (current.getHP()<=0 ||current.getWithstoodCute()<=0||current.getScared()<=0);
+  return (current.getHP()<=0 ||current.getWithstoodCute()<=0||current.getScared()<=0); //boolean wether the enemy has or has not died
 }
 
 void next() {
-  println("UP TO NEXT()");
+  currDog.resetScared();
+  //println("UP TO NEXT()");
   if (ennemis.isEmpty()){
     println("You won!");
   //  delay(600);
@@ -176,8 +208,8 @@ void next() {
   println("Here are the stats of your next enemy!");
   println("Health: " + current.getHP());
   println("Maximum cuteness tolerated: " + current.getWithstoodCute());
-  println("Please pick which dog you would like: the most cute (0), agile (1), loud (2) or powerful (3)");
-  int randName = (int)random(0,20);
+  println("Please pick which dog you would like: the most cute (purple), agile (Dark green), loud (blue) or powerful (orange)");
+  int randName = (int)random(0,20); //random names
   if (randName==0){
     Dog temp = new Dog("Buddie",levelCounter);
     cuteH.add(temp);
@@ -318,7 +350,10 @@ void next() {
     loudH.add(temp);
     powerH.add(temp);
   }
-  whoseMove=0;
+
   levelCounter++;
+  //println("Hi!");
+  //println(cuteH);
 }
 }
+//
