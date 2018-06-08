@@ -1,8 +1,8 @@
 class DogCatcher extends Enemy {
 
 public DogCatcher(){
-BASEHP = random(300,500);
-BASECUTE = random(300,500);
+HP = (int)random(300,500);
+withstoodCuteness = (int)random(300,500);
 }
 
 //methods 
