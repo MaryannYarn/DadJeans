@@ -30,6 +30,7 @@ void setup() {
   powerH = new ALHeap(3);
   Enemy temp = new Ball();
   ennemis.push(temp);
+
   ennemis.push(new Ball());
   ennemis.push(new Ball());
   ennemis.push(new Ball());
@@ -58,7 +59,7 @@ void draw() {
   if (whoseMove==1) {
     if (currDog.isDefeated()){
       println(currDog.loseMessage());
-      delay(500);
+  //    delay(500);
       whoseMove=3;
     }
     if (isEnDefeated()){
@@ -116,11 +117,11 @@ void mouseClicked() {
     println(currDog.stats());
     if (currDog.isDefeated()){
       println(currDog.loseMessage());
-      delay(500);
+    //  delay(500);
       whoseMove=3;
     }
     if (isEnDefeated()){
-    //  next();
+    next();
     whoseMove=2;
     }
      if(mouseX < 500 && mouseY < 350){
@@ -158,9 +159,10 @@ public boolean isEnDefeated(){
 }
 
 void next() {
+  println("UP TO NEXT()");
   if (ennemis.isEmpty()){
     println("You won!");
-    delay(600);
+  //  delay(600);
     whoseMove=3;
   }
   println(currDog.winMessage(current.getName()));
