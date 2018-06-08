@@ -4,6 +4,7 @@ public Cat(){
 HP = (int)random(250,300);
 withstoodCuteness = (int)random(250,300);
 name = "cat";
+scared = (int)random(150,200);
 }
 
 //methods

@@ -17,6 +17,7 @@ public Dog(String inName){
   loud = (int)random(10,100);
   power = (int)random(10,100);
   name=inName;
+  scared=0;
 }
 
 //modifier methods
@@ -69,7 +70,7 @@ public void setPwr(int x) {
 }
 */
 public void setScared(int x) {
-	scared -= x;
+	scared += x;
 }
 
 public void resetScared() {
@@ -77,8 +78,8 @@ public void resetScared() {
 }
 
 
-public String winMessage(){
- return "Your good boy, "+name+" defeated the enemy! Give them some treats tonight";
+public String winMessage(String input){
+ return "Your good boy, "+name+" defeated the enemy, "+input+"! Give them some treats tonight";
 }
 
 public String loseMessage() {
