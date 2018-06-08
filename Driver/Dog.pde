@@ -12,10 +12,10 @@ public boolean isDefeated;
 public String name;
 
 public Dog(String inName){
-  cuteness = random(10,100);
-  agility = random(10,100);
-  loud = random(10,100);
-  power = random(10,100);
+  cuteness = (int)random(10,100);
+  agility = (int)random(10,100);
+  loud = (int)random(10,100);
+  power = (int)random(10,100);
   name=inName;
   MAXSCARED = 50;
 }
@@ -67,6 +67,10 @@ public void setScared(int x) {
 	scared -= x;
 }
 
+public void resetScared() {
+  scared =0;
+}
+
 
 public String winMessage(){
  return "Your good boy defeated the enemy! Give them some treats tonight";
@@ -74,6 +78,10 @@ public String winMessage(){
 
 public String loseMessage() {
   return "Nooo! Your dog was so scared they ran away... good luck finding them ;)";
+}
+
+public String stats(){
+  return ("Name: "+name+"  cuteness: "+cuteness+"  agility: "+agility+"  loudness: "+loud+"  power: "+power + "  scared: "+scared);
 }
 
 //public String dogImage();

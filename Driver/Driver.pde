@@ -57,16 +57,37 @@ void draw() {
 void mouseClicked() {
   if (whoseMove == 2) { //TOP LEFT: CUTE, TOP RIGHT:LOUD, BOTTOM LEFT: AGILE, BOTTOM RIGHT: POWER
      if(mouseX < 500 && mouseY < 350){
-       cuteH.removeMin();
+       currDog=cuteH.peekMin();
      }
      if(mouseX < 500 && mouseY > 350){
-       agileH.removeMin();
+       currDog=agileH.peekMin();
      }
      if(mouseX > 500 && mouseY < 350){
-       loudH.removeMin();
+       currDog=loudH.peekMin();
      }
      if(mouseX > 500 && mouseY > 350){
-       powerH.removeMin();
+       currDog=powerH.peekMin();
+     }
+     whoseMove=0;
+  }
+  
+  if (whoseMove == 0) { //TOP LEFT: BITE, TOP RIGHT:Bark, BOTTOM LEFT: POUNCE, BOTTOM RIGHT: CHARM
+     if(mouseX < 500 && mouseY < 350){
+       current.modifyHP(currDog.getPwr());
+       current.modifyCute(-1*currDog.getPwr());
+       current.modifyScared(currDog.getPwr());
+     }
+     if(mouseX < 500 && mouseY > 350){
+       current.modifyHP(currDog.getAgility());
+       current.modifyScared(currDog.getAgility());
+     }
+     if(mouseX > 500 && mouseY < 350){
+       current.modifyCute(-1*currDog.getLoud());
+       current.modifyScared(currDog.getLoud());
+     }
+     if(mouseX > 500 && mouseY > 350){
+       current.modifyCute(currDog.getCuteness());
+       current.modifyScared(-1*currDog.getCuteness());
      }
   }
 }
