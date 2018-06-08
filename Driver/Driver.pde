@@ -31,8 +31,12 @@ void setup() {
   size(1000, 700);
   background(color(0,255,0));
   ennemis=new Stack<Enemy>();
+<<<<<<< HEAD
   println("You came to the Dog Park with your dog walker when suddenly you turn around and they are gone! You must go defeat those who stand in
   the way of you and your dog walker.  Along the way, you will meet more dogs who will help you on your quest. Good luck!");
+=======
+  println("Welcome to the Dangerous Dog Park, where your dogs come for a thriller.... As your dogs walk through the park, they encounter enemies with different strengths, including attack strength, health points and the amount of cuteness they can withstand. You will have to choose from one of four heaps of dogs to combat this enemy. Click anywhere to continue.");
+>>>>>>> 83811195daf6d2ef29fea56b0d1cecef32120adb
   cuteH = new ALHeap(0);
   agileH = new ALHeap(1);
   loudH =  new ALHeap(2);

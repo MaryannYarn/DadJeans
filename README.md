@@ -13,7 +13,15 @@ Some of the enemies that will be faced are:
 * A cat 
 * A dog catcher (FINAL BOSS) 
 
-_**Instructions for Playing**_
+_**How It Works**_
 
-_**Instructions for Running**_
-(fill in later) 
+
+_**Launch Instructions**_
+1. Clone our repo
+~~~~
+$ git clone git@github.com:https://github.com/MaryannYarn/DadJeans.git 
+~~~~
+2. Run in Processing Driver.pde from DadJeans/Driver directory 
+3. Begin game by following instructions on console! 
+
+ 
