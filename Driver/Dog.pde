@@ -70,7 +70,7 @@ public void setPwr(int x) {
 }
 */
 public void setScared(int x) {
-	scared -= x;
+	scared += x;
 }
 
 public void resetScared() {

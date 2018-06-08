@@ -47,6 +47,116 @@ void setup() {
   color4= color(255, 172, 48);
 }
 
+void draw() {
+  clear();
+  background(color(0,255,0));
+  currDog.displayDog();
+  displayEnemy();
+  if (whoseMove==3){
+    exit();
+  }
+  if (whoseMove==1) {
+    if (currDog.isDefeated()){
+      println(currDog.loseMessage());
+      delay(500);
+      whoseMove=3;
+    }
+    if (isEnDefeated()){
+      whoseMove=2;
+    }
+    println("PRE ENEMY ATTAACC");
+    println(current.stats());
+    println(currDog.stats());
+    currDog.setScared(current.attack());
+    whoseMove=0;
+    println("POST ENEMY ATTACK");
+    println(current.stats());
+    println(currDog.stats());
+  }
+  if (whoseMove ==2) {
+    println("You defeated an enemy!");
+    next();
+    //delay(1000);
+    //area for user input
+  }
+  /*if (whoseMove==0){ // b u t t o n s
+    fill(color1);
+    rect(0,0,500,350,10);
+  //  rect(250,175,250,175,10);
+    fill(color2);
+    //rect(250,525,250,175,10);
+    rect(0,350,500,350,10);
+    fill(color3);
+    rect(500,0,500,350,10);
+    fill(color4);
+    rect(500,350,500,350,10);
+  }*/
+}
+
+void mouseClicked() {
+  if (whoseMove == 2) { //TOP LEFT: CUTE, TOP RIGHT:LOUD, BOTTOM LEFT: AGILE, BOTTOM RIGHT: POWER
+     if(mouseX < 500 && mouseY < 350){
+       currDog=cuteH.peekMin();
+     }
+     if(mouseX < 500 && mouseY > 350){
+       currDog=agileH.peekMin();
+     }
+     if(mouseX > 500 && mouseY < 350){
+       currDog=loudH.peekMin();
+     }
+     if(mouseX > 500 && mouseY > 350){
+       currDog=powerH.peekMin();
+     }
+     whoseMove=0;
+  }
+
+  if (whoseMove == 0) { //TOP LEFT: BITE, TOP RIGHT:Bark, BOTTOM LEFT: POUNCE, BOTTOM RIGHT: CHARM
+    println("PRE DOG ATTAACC");
+    println(current.stats());
+    println(currDog.stats());
+    if (currDog.isDefeated()){
+      println(currDog.loseMessage());
+      delay(500);
+      whoseMove=3;
+    }
+    if (isEnDefeated()){
+    //  next();
+    whoseMove=2;
+    }
+     if(mouseX < 500 && mouseY < 350){
+       current.modifyHP(currDog.getPwr());
+       current.modifyCute(-1*currDog.getPwr());
+       current.modifyScared(currDog.getPwr());
+     }
+     if(mouseX < 500 && mouseY > 350){
+       current.modifyHP(currDog.getAgility());
+       current.modifyScared(currDog.getAgility());
+     }
+     if(mouseX > 500 && mouseY < 350){
+       current.modifyCute(-1*currDog.getLoud());
+       current.modifyScared(currDog.getLoud());
+     }
+     if(mouseX > 500 && mouseY > 350){
+       current.modifyCute(currDog.getCuteness());
+       current.modifyScared(-1*currDog.getCuteness());
+     }
+     println("POST DOG ATTAACC");
+     println(current.stats());
+     println(currDog.stats());
+     whoseMove=1;
+  }
+}
+
+public void displayEnemy(){
+  fill(color(255,0,0));
+  ellipse(750,350,100,100);
+}
+
+
+public boolean isEnDefeated(){
+  return (current.getHP()<0 ||current.getWithstoodCute()<0||current.getScared()<0);
+}
+
 void next() {
   if (ennemis.isEmpty()){
     println("You won!");
@@ -201,114 +311,4 @@ void next() {
     powerH.add(temp);
   }
   whoseMove=0;
-}
-
-void draw() {
-  clear();
-  background(color(0,255,0));
-  currDog.displayDog();
-  displayEnemy();
-  if (whoseMove==3){
-    exit();
-  }
-  if (whoseMove==1) {
-    if (currDog.isDefeated()){
-      println(currDog.loseMessage());
-      delay(500);
-      whoseMove=3;
-    }
-    if (isEnDefeated()){
-      whoseMove=2;
-    }
-    println("PRE ENEMY ATTAACC");
-    println(current.stats());
-    println(currDog.stats());
-    currDog.setScared(current.attack());
-    whoseMove=0;
-    println("POST ENEMY ATTACK");
-    println(current.stats());
-    println(currDog.stats());
-  }
-  if (whoseMove ==2) {
-    println("You defeated an enemy!");
-    next();
-    //delay(1000);
-    //area for user input
-  }
-  /*if (whoseMove==0){ // b u t t o n s
-    fill(color1);
-    rect(0,0,500,350,10);
-  //  rect(250,175,250,175,10);
-    fill(color2);
-    //rect(250,525,250,175,10);
-    rect(0,350,500,350,10);
-    fill(color3);
-    rect(500,0,500,350,10);
-    fill(color4);
-    rect(500,350,500,350,10);
-  }*/
-}
-
-void mouseClicked() {
-  if (whoseMove == 2) { //TOP LEFT: CUTE, TOP RIGHT:LOUD, BOTTOM LEFT: AGILE, BOTTOM RIGHT: POWER
-     if(mouseX < 500 && mouseY < 350){
-       currDog=cuteH.peekMin();
-     }
-     if(mouseX < 500 && mouseY > 350){
-       currDog=agileH.peekMin();
-     }
-     if(mouseX > 500 && mouseY < 350){
-       currDog=loudH.peekMin();
-     }
-     if(mouseX > 500 && mouseY > 350){
-       currDog=powerH.peekMin();
-     }
-     whoseMove=0;
-  }
-
-  if (whoseMove == 0) { //TOP LEFT: BITE, TOP RIGHT:Bark, BOTTOM LEFT: POUNCE, BOTTOM RIGHT: CHARM
-    println("PRE DOG ATTAACC");
-    println(current.stats());
-    println(currDog.stats());
-    if (currDog.isDefeated()){
-      println(currDog.loseMessage());
-      delay(500);
-      whoseMove=3;
-    }
-    if (isEnDefeated()){
-    //  next();
-    whoseMove=2;
-    }
-     if(mouseX < 500 && mouseY < 350){
-       current.modifyHP(currDog.getPwr());
-       current.modifyCute(-1*currDog.getPwr());
-       current.modifyScared(currDog.getPwr());
-     }
-     if(mouseX < 500 && mouseY > 350){
-       current.modifyHP(currDog.getAgility());
-       current.modifyScared(currDog.getAgility());
-     }
-     if(mouseX > 500 && mouseY < 350){
-       current.modifyCute(-1*currDog.getLoud());
-       current.modifyScared(currDog.getLoud());
-     }
-     if(mouseX > 500 && mouseY > 350){
-       current.modifyCute(currDog.getCuteness());
-       current.modifyScared(-1*currDog.getCuteness());
-     }
-     println("POST DOG ATTAACC");
-     println(current.stats());
-     println(currDog.stats());
-     whoseMove=1;
-  }
-}
-
-public void displayEnemy(){
-  fill(color(255,0,0));
-  ellipse(750,350,100,100);
-}
-
-
-public boolean isEnDefeated(){
-  return (current.getHP()<0 ||current.getWithstoodCute()<0||current.getScared()<0);
 }
