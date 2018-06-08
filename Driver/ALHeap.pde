@@ -297,17 +297,30 @@ class ALHeap
     else if ( rc >= _heap.size() )
       retVal = lc;
     //have 2 children, so compare to find least 
-    else if ( _heap.get(lc).compareTo(_heap.get(rc)) < 0 )
+    else if ( getRightVal(_heap.get(lc)).compareTo(getRightVal(_heap.get(rc))) < 0 )
       retVal = lc;
     else
       retVal = rc;
     return retVal;
   }//O(1)
 
-
+  private Integer getRightVal(Dog input){
+    if (sortingMethod==0){
+      return input.getCuteness();
+    }
+    if (sortingMethod==1){
+      return input.getAgility();
+    }
+    if (sortingMethod==2){
+      return input.getLoud();
+    }
+    else{
+      return input.getPwr();
+    }
+  }
 
   //************ aux helper fxns ***************
-  private Integer minOf( Dog a, Dog b )
+  private Dog minOf( Dog a, Dog b )
   {
     if (sortingMethod ==0) {
       if ( a.getCuteness().compareTo(b.getCuteness()) < 0 )
@@ -327,7 +340,7 @@ class ALHeap
       else
         return b;
     }
-    else if (sortingMethod ==3) {
+    else {
       if ( a.getPwr().compareTo(b.getPwr()) < 0 )
         return a;
       else
