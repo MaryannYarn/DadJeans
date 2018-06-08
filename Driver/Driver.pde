@@ -18,6 +18,7 @@ color color1;
 color color2;
 color color3;
 color color4;
+int levelCounter;
 
 void setup() {
   size(1000, 700);
@@ -33,7 +34,8 @@ void setup() {
   ennemis.push(new Bird());
   ennemis.push(new Ball());
   ennemis.push(new Ball());
-  Dog chub = new Dog("Charlie");
+  Dog chub = new Dog("Charlie",1);
+  levelCounter=1;
   cuteH.add(chub);
   agileH.add(chub);
   loudH.add(chub);
@@ -81,30 +83,28 @@ void draw() {
   }
   if (whoseMove==0){ // b u t t o n s
     fill(color1);
-    rect(0,0,500,350,10);
-  //  rect(250,175,250,175,10);
+    rect(0,0,200,200,10);
     fill(color2);
-    //rect(250,525,250,175,10);
-    rect(0,350,500,350,10);
+    rect(0,500,200,200,10);
     fill(color3);
-    rect(500,0,500,350,10);
+    rect(800,0,200,200,10);
     fill(color4);
-    rect(500,350,500,350,10);
+    rect(800,500,200,200,10);
   }
 }
 
 void mouseClicked() {
   if (whoseMove == 2) { //TOP LEFT: CUTE, TOP RIGHT:LOUD, BOTTOM LEFT: AGILE, BOTTOM RIGHT: POWER
-     if(mouseX < 500 && mouseY < 350){
+     if(mouseX < 200 && mouseY < 200){
        currDog=cuteH.peekMin();
      }
-     if(mouseX < 500 && mouseY > 350){
+     if(mouseX < 200 && mouseY > 500){
        currDog=agileH.peekMin();
      }
-     if(mouseX > 500 && mouseY < 350){
+     if(mouseX > 800 && mouseY < 200){
        currDog=loudH.peekMin();
      }
-     if(mouseX > 500 && mouseY > 350){
+     if(mouseX > 800 && mouseY > 500){
        currDog=powerH.peekMin();
      }
      whoseMove=0;
@@ -114,6 +114,11 @@ void mouseClicked() {
     println("PRE DOG ATTAACC");
     println(current.stats());
     println(currDog.stats());
+    println("Press a button to pick your next move: ");
+    println("PINK: Bite");
+    println("GREEN: Bark");
+    println("BLUE: Pounce");
+    println("YELLOW: Charm");
     if (currDog.isDefeated()){
       println(currDog.loseMessage());
     //  delay(500);
@@ -174,144 +179,146 @@ void next() {
   println("Please pick which dog you would like: the most cute (0), agile (1), loud (2) or powerful (3)");
   int randName = (int)random(0,20);
   if (randName==0){
-    Dog temp = new Dog("Buddie");
+    Dog temp = new Dog("Buddie",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==1){
-    Dog temp = new Dog("Groth");
+    Dog temp = new Dog("Groth",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==2){
-    Dog temp = new Dog("Bort Sampson");
+    Dog temp = new Dog("Bort Sampson",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==3){
-    Dog temp = new Dog("Chester");
+    Dog temp = new Dog("Chester",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==4){
-    Dog temp = new Dog("Bailey");
+    Dog temp = new Dog("Bailey",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==5){
-    Dog temp = new Dog("Luna");
+    Dog temp = new Dog("Luna",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==6){
-    Dog temp = new Dog("Apollo");
+    Dog temp = new Dog("Apollo",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==7){
-    Dog temp = new Dog("Clifford");
+    Dog temp = new Dog("Clifford",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==8){
-    Dog temp = new Dog("Ernie");
+    Dog temp = new Dog("Ernie",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==9){
-    Dog temp = new Dog("Griffin");
+    Dog temp = new Dog("Griffin",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==10){
-    Dog temp = new Dog("Haring");
+    Dog temp = new Dog("Haring",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==11){
-    Dog temp = new Dog("Grant");
+    Dog temp = new Dog("Grant",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==12){
-    Dog temp = new Dog("Dali");
+    Dog temp = new Dog("Dali",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==13){
-    Dog temp = new Dog("Valazquez");
+    Dog temp = new Dog("Valazquez",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==14){
-    Dog temp = new Dog("Pawcaso");
+    Dog temp = new Dog("Pawcaso",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==15){
-    Dog temp = new Dog("JK Growling");
+    Dog temp = new Dog("JK Growling",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==16){
-    Dog temp = new Dog("Billie Howliday");
+    Dog temp = new Dog("Billie Howliday",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==17){
-    Dog temp = new Dog("Snoop Dog");
+    Dog temp = new Dog("Snoop Dog",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   if (randName==18){
-    Dog temp = new Dog("bork master 9000");
+    Dog temp = new Dog("bork master 9000",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
   else{
-    Dog temp = new Dog("Bert");
+    Dog temp = new Dog("Bert",levelCounter);
     cuteH.add(temp);
     agileH.add(temp);
     loudH.add(temp);
     powerH.add(temp);
   }
-  whoseMove=0;}
+  whoseMove=0;
+  levelCounter++;
+}
 }

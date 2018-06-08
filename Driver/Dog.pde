@@ -1,6 +1,6 @@
 class Dog {
 
-public static final int MAXSCARED=100;
+public static final int MAXSCARED=10000;
 
 //instance vars
 private int cuteness;
@@ -11,11 +11,11 @@ public int scared;
 public boolean isDefeated;
 public String name;
 
-public Dog(String inName){
-  cuteness = (int)random(10,100);
-  agility = (int)random(10,100);
-  loud = (int)random(10,100);
-  power = (int)random(10,100);
+public Dog(String inName, int level){
+  cuteness = (int)random(10,75*level);
+  agility = (int)random(10,75*level);
+  loud = (int)random(10,75*level);
+  power = (int)random(10,75*level);
   name=inName;
   scared=0;
 }

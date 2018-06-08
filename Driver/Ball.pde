@@ -3,7 +3,7 @@ class Ball extends Enemy {
 public Ball(){
 HP = (int)random(50,100);
 withstoodCuteness = (int)random(50,100);
-attackStrength= (int)random(1,5);
+attackStrength= (int)random(1,3);
 scared = (int)random(50,100);
 name = "ball";
 }
