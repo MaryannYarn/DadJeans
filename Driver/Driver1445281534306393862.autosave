@@ -14,25 +14,20 @@ Enemy current;
 int whoseMove; //0 is dogs move, 1 is enemy's move, 2 means enemy has just been defeated
 Dog currDog;
 
-color color1;
-color color2;
-color color3;
-color color4;
 
 void setup() {
   size(1000, 700);
   background(color(0,255,0));
-  ennemis=new Stack<Enemy>();
   println("Welcome to the Dangerous Dog Park, where your dogs come for a thriller....<more intro + directions>");
   cuteH = new ALHeap(0);
   agileH = new ALHeap(1);
   loudH =  new ALHeap(2);
   powerH = new ALHeap(3);
   Enemy temp = new Ball();
-  ennemis.push(temp);
-  ennemis.push(new Ball());
-  ennemis.push(new Ball());
-  ennemis.push(new Ball());
+  ennemis.add(new Ball());
+  ennemis.add(new Ball());
+  ennemis.add(new Ball());
+  ennemis.add(new Ball());
   Dog chub = new Dog("Charlie");
   cuteH.add(chub);
   agileH.add(chub);
@@ -40,19 +35,9 @@ void setup() {
   powerH.add(chub);
   currDog=chub;
   whoseMove=0;
-  current = ennemis.pop();
-  color1= new color(193, 81, 219);
-  color2= new color(107, 198, 198);
-  color3=new color(158, 193, 116);
-  color4=new color(255, 172, 48);
 }
 
 void next() {
-  if (ennemis.isEmpty()){
-    println("You won!");
-    delay(600);
-    whoseMove=3;
-  }
   Enemy current= ennemis.pop();
   println("Here are the stats of your next enemy!");
   println("Health: " + current.getHP());
@@ -119,17 +104,12 @@ void next() {
   if (randName==19){
     Dog temp = new Dog("Bert");
   }
-  cuteH.add(temp);
-  agileH.add(temp);
-  loudH.add(temp);
-  powerH.add(temp);
 }
 
 void draw() {
   clear();
-  background(color(0,255,0));
   currDog.displayDog();
-  displayEnemy();
+  current.displayEnemy();
   if (whoseMove==3){
     exit();
   }
@@ -141,16 +121,6 @@ void draw() {
     println("You defeated an enemy!");
     next();
     //area for user input
-  }
-  if (whoseMove==0){ // b u t t o n s
-    fill(color1);
-    rect(250,175,250,175,10);
-    fill(color2);
-    rect(250,525,250,175,10);
-    fill(color3);
-    rect(750,175,250,175,10);
-    fill(color4);
-    rect(750,525,250,175,10);
   }
 }
 
@@ -195,10 +165,4 @@ void mouseClicked() {
        current.modifyScared(-1*currDog.getCuteness());
      }
   }
-}
-
-public void displayEnemy(){
-  fill(color(255,0,0));
-  ellipse(750,350,100,100);
-
 }

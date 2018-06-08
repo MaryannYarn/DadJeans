@@ -1,6 +1,6 @@
 class Dog {
 
-public static final int MAXSCARED=50;
+public static final int MAXSCARED=100;
 
 //instance vars
 private int cuteness;
@@ -20,6 +20,12 @@ public Dog(String inName){
 }
 
 //modifier methods
+public boolean isDefeated(){
+  if (scared == MAXSCARED){
+  return true;
+  }
+  return false;
+}
 public Integer getCuteness() {
 	return new Integer(cuteness);
 }
@@ -84,7 +90,7 @@ public String stats(){
 }
 
 public void displayDog(){
-  fill(color(0,255,0));
+  fill(color(0,0,255));
   ellipse(250,350,100,100);
 
 }
