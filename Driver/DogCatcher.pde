@@ -5,7 +5,7 @@ HP = (int)random(300,500);
 withstoodCuteness = (int)random(300,500);
 name = "Dog catcher";
 scared = (int)random(400,700);
-attackStrength= (int)random(40,55);
+attackStrength= (int)random(12,15);
 }
 
 //methods
