@@ -1,10 +1,9 @@
 abstract class Enemy {
 
 //instance vars
-private final int BASEHP;
-private final int BASECUTE;
-private int HP;
-private int withstoodCuteness;
+
+public int HP;
+public int withstoodCuteness;
 public int scared;
 public String name;
 public int attackStrength;
@@ -19,15 +18,15 @@ public boolean isDefeated(){
   return false;
 }
 public void modifyHP(int damage){
-HP -= damage; 
+HP -= damage;
 }
 
 public void modifyCute(int cuteness){ //as in cuteness of the dog
-withstoodCuteness -= cuteness; //?? is this how it works 
+withstoodCuteness -= cuteness; //?? is this how it works
 }
 
 public void modifyScared(int fear){
-scared -= fear; 
+scared -= fear;
 }
 
 
@@ -47,9 +46,14 @@ public int attack(){
   return attackStrength;
 }
 
-public abstract String winMessage() {
+public abstract String winMessage();
+
+public abstract String loseMessage();
+
+public void displayEnemy(){
+  fill(color(255,0,0));
+  ellipse(750,350,100,100);
+
 }
 
-public abstract String loseMessage(){
-}
 }

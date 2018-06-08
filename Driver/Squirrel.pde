@@ -1,8 +1,8 @@
 class Squirrel extends Enemy {
 
 public Squirrel(){
-BASEHP = random(150,200);
-BASECUTE = random(150,200);
+HP = (int)random(150,200);
+withstoodCuteness = (int)random(150,200);
 }
 
 //methods 

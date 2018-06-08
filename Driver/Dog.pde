@@ -1,6 +1,6 @@
 class Dog {
 
-public static final int MAXSCARED;
+public static final int MAXSCARED=50;
 
 //instance vars
 private int cuteness;
@@ -17,7 +17,6 @@ public Dog(String inName){
   loud = (int)random(10,100);
   power = (int)random(10,100);
   name=inName;
-  MAXSCARED = 50;
 }
 
 //modifier methods
@@ -82,6 +81,12 @@ public String loseMessage() {
 
 public String stats(){
   return ("Name: "+name+"  cuteness: "+cuteness+"  agility: "+agility+"  loudness: "+loud+"  power: "+power + "  scared: "+scared);
+}
+
+public void displayDog(){
+  fill(color(0,255,0));
+  ellipse(250,350,100,100);
+
 }
 
 //public String dogImage();

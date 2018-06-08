@@ -17,6 +17,7 @@ Dog currDog;
 
 void setup() {
   size(1000, 700);
+  background(color(0,255,0));
   println("Welcome to the Dangerous Dog Park, where your dogs come for a thriller....<more intro + directions>");
   cuteH = new ALHeap(0);
   agileH = new ALHeap(1);
@@ -44,8 +45,12 @@ void next() {
 }
 
 void draw() {
+  clear();
+  currDog.displayDog();
+  current.displayEnemy();
   if (whoseMove==1) {
     currDog.setScared(current.attack());
+    whoseMove=0;
   }
   if (whoseMove ==2) {
     println("You defeated an enemy!");
@@ -70,7 +75,7 @@ void mouseClicked() {
      }
      whoseMove=0;
   }
-  
+
   if (whoseMove == 0) { //TOP LEFT: BITE, TOP RIGHT:Bark, BOTTOM LEFT: POUNCE, BOTTOM RIGHT: CHARM
      if(mouseX < 500 && mouseY < 350){
        current.modifyHP(currDog.getPwr());
