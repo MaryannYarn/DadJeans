@@ -87,7 +87,7 @@ public String loseMessage() {
 }
 
 public String stats(){
-  return ("Name: "+name+"  cuteness: "+cuteness+"  agility: "+agility+"  loudness: "+loud+"  power: "+power + "  scared: "+scared);
+  return ("Name: "+name+"  cuteness: "+cuteness+"  agility: "+agility+"  loudness: "+loud+"  power: "+power + "  scaredness: "+scared);
 }
 
 public void displayDog(){

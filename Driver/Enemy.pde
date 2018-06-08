@@ -61,7 +61,7 @@ public void displayEnemy(){
 }
 
 public String stats(){
-  return ("name: "+name+"  withstoodCuteness: "+withstoodCuteness+"  HP: "+HP+"  scared: "+scared+"  attackStrength: "+attackStrength);
+  return ("name: "+name+"   withstood Cuteness: "+withstoodCuteness+"  HP: "+HP+"  scaredness: "+scared+"  attack Strength: "+attackStrength);
 }
 
 }
