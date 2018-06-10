@@ -268,16 +268,16 @@ class ALHeap
 
   private float getRightVal(Dog input){
     if (sortingMethod==0){
-      return (1.0/input.getCuteness()).parseInt();
+      return (1.0/input.getCuteness().intValue());
     }
     if (sortingMethod==1){
-      return (1.0/(input.getAgility().parseInt());
+      return (1.0/(input.getAgility().intValue()));
     }
     if (sortingMethod==2){
-      return (1.0/input.getLoud().parseInt());
+      return (1.0/input.getLoud().intValue());
     }
     else{
-      return (1.0/input.getPwr().parseInt());
+      return (1.0/input.getPwr().intValue());
     }
   }
 

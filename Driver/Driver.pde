@@ -26,18 +26,19 @@ int levelCounter;
   PImage img3;
   PImage img4;
   PImage img5;
+int startN;
 
 void setup() {
   size(1000, 700);
-  background(color(0,255,0));
   ennemis=new Stack<Enemy>();
-<<<<<<< HEAD
-  println("You came to the Dog Park with your dog walker when suddenly you turn around and they are gone! You must go defeat those who stand in
-  the way of you and your dog walker.  Along the way, you will meet more dogs who will help you on your quest. Good luck!");
-=======
-  println("Welcome to the Dangerous Dog Park, where your dogs come for a thriller.... As your dogs walk through the park, they encounter enemies with different strengths, including attack strength, health points and the amount of cuteness they can withstand. You will have to choose from one of four heaps of dogs to combat this enemy. Click anywhere to continue.");
->>>>>>> 83811195daf6d2ef29fea56b0d1cecef32120adb
-  cuteH = new ALHeap(0);
+  background(color(65, 193, 149));
+  textSize(30);
+  text("You came to the Dog Park with your dog walker when suddenly",25,250);
+  text("you turn around and she disappeared! You must go defeat those",25,290);
+  text("who stand in the way of you and your dog walker.  Along the",40,330);
+  text("way, you will meet more dogs who will help you on your quest.",22,370);
+  text("Good luck!",450,420);
+    cuteH = new ALHeap(0);
   agileH = new ALHeap(1);
   loudH =  new ALHeap(2);
   powerH = new ALHeap(3);
@@ -55,24 +56,33 @@ void setup() {
   currDog=chub;
   whoseMove=0;
   current = ennemis.pop();
-  color1= color(193, 81, 219);
-  color2= color(107, 198, 198);
-  color3= color(158, 193, 116);
-  color4= color(255, 172, 48);
+  color1= color(129, 52, 5);
+  color2= color(212, 81, 19);
+  color3= color(139, 87, 92);
+  color4= color(173, 52, 62);
+  startN=0;
+  
   img0 = loadImage("http://www.stickpng.com/assets/images/580b585b2edbce24c47b2b90.png");
   img1 = loadImage("http://www.stickpng.com/assets/images/580b57fbd9996e24bc43bcef.png");
   img2 = loadImage("http://webiconspng.com/wp-content/uploads/2017/09/Birds-PNG-Image-62677.png");
   img3 = loadImage("http://www.stickpng.com/assets/images/5a5a8bec14d8c4188e0b08ea.png");
   img4 = loadImage("https://openclipart.org/image/2400px/svg_to_png/252173/Woman-Walking-Dog-Silhouette.png");
-  img5 = loadImage("https://data.whicdn.com/images/110263905/large.png");
+  img5 = loadImage("https://iheartdogs.com/wp-content/uploads/2017/08/shiba-inus.png");
+
+
+  
 }
 
 void draw() {
+  if (startN==0){
+  delay(6000);
+  startN=1;
+  return;
+  }
   clear();
   background(color(65, 193, 149));
-  currDog.displayDog();
   //displayEnemy();
-  image(img5,104,200,img5.width/(1.5),img5.height/(1.5)); // images always there, only one enem at time
+  image(img5,150,250,img5.width/(1),img5.height/(1)); // dog always there, only one enem at time
   if (current.getName().equals("ball")){
     image(img0,650,250,img0.width/10, img0.height/10);
   }
@@ -123,6 +133,26 @@ void draw() {
     fill(color4);
     rect(800,500,200,200,10);
   }
+  if (whoseMove==2){
+    color c = color(221,249,193);
+    fill(c);
+    text("Cutest",60,90);
+    text("Most agile",20,620);
+    text("Loudest",820,90);
+
+    text("Most",870,580);
+    text("powerful",830,620);
+  }
+  if (whoseMove==0){
+    color c = color(221,249,193);
+    fill(c);
+    text("Bite",60,100);
+    text("Pounce",60,620);
+    text("Bark",850,100);
+    text("Charm",850,620);
+  }
+  current.stats();
+  currDog.stats();
 }
 
 void mouseClicked() {

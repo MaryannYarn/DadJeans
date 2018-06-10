@@ -1,6 +1,6 @@
 class Dog {
 
-public static final int MAXSCARED=10000;
+public static final int MAXSCARED=100;
 
 //instance vars
 private int cuteness;
@@ -8,8 +8,8 @@ private int agility;
 private int loud; //loudness
 private int power;
 public int scared;
-public boolean isDefeated;
 public String name;
+
 
 public Dog(String inName, int level){
   cuteness = (int)random(10,75*level);
@@ -87,6 +87,21 @@ public String loseMessage() {
 }
 
 public String stats(){
+  textSize(25);
+  String s = "Name: "+name;
+  text(s,420,20);
+  textSize(18);
+  s = "Cuteness: "+cuteness;
+  text(s,440,50);
+  s = "Agility: "+agility;
+  text(s,440,80);
+  s = "Loudness: "+loud;
+  text(s,440,110);
+  s = "Power: "+power;
+  text(s,440,150);
+  s = "Scaredness: "+scared;
+  text(s,440,180);
+  textSize(30);
   return ("Name: "+name+"  cuteness: "+cuteness+"  agility: "+agility+"  loudness: "+loud+"  power: "+power + "  scaredness: "+scared);
 }
 
@@ -96,6 +111,5 @@ public void displayDog(){
 
 }
 
-//public String dogImage();
 
 }

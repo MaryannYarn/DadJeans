@@ -7,7 +7,9 @@ public int withstoodCuteness;
 public int scared;
 public String name;
 public int attackStrength;
-
+public int maxHP;
+public int maxCute;
+public int maxScared;
 
 //methods
 
@@ -56,6 +58,19 @@ public abstract String loseMessage();
 
 
 public String stats(){
+  textSize(25);
+  String s = "Name: "+name;
+  text(s,450,540);
+  textSize(18);
+  s = "Withstood Cuteness: "+withstoodCuteness+"/"+maxCute;
+  text(s,380,570);
+  s = "HP: "+HP+"/"+maxHP;
+  text(s,450,600);
+  s = "Scared: "+scared+"/"+maxScared;
+  text(s,450,630);
+  s = "Attack Strength: "+attackStrength;
+  text(s,430,670);
+  textSize(30);
   return ("name: "+name+"   withstood Cuteness: "+withstoodCuteness+"  HP: "+HP+"  scaredness: "+scared+"  attack Strength: "+attackStrength);
 }
 

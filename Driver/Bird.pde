@@ -5,6 +5,9 @@ HP = (int)random(400,450);
 withstoodCuteness = (int)random(350,400);
 name = "bird";
 scared = (int)random(100,150);
+maxHP=HP;
+maxCute=withstoodCuteness;
+maxScared=scared;
 attackStrength= (int)random(6,9);
 }
 

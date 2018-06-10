@@ -4,6 +4,9 @@ public Squirrel(){
 HP = (int)random(300,400);
 withstoodCuteness = (int)random(300,400);
 name = "squirrel";
+maxHP=HP;
+maxCute=withstoodCuteness;
+maxScared=scared;
 attackStrength= (int)random(3,10);
 }
 
